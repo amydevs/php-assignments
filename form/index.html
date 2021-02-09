@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <body>
     <form name="form" method="post"  action="process.php">
-        <table width="263" border="0">
+        <table width="263" border="1">
         <tr>
             <td width="117"><p>First Name</p></td>
             <td width="130"><input type="text" name="firstName"></td>
@@ -18,18 +18,22 @@
         <tr>
             <td width="117"><p>Gender</p></td>
             <td width="130">
-                <select name="gender">
-                <option value="M">Male</option>
-                <option value="F">Female</option>
+                <select onclick="enable()" id="genderSelect" name="gender">
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                    <option value="O">Enter Below</option>
                 </select>
+                <input id="genderText" name="gender">
             </td>
         </tr>
         <tr>
             <td width="117"><p>Favourite Colour </p></td>
             <td width="130">
-        <span style="color: red;">Red</span><input name="colour" type="radio" value="red">
-        <span style="color: green;">Green</span><input name="colour" type="radio" value="green">
-        <span style="color: blue;">Blue</span><input name="colour" type="radio" value="blue"> 
+                <ul style="list-style-type: none;">
+                <li><span style="color: red;">Red</span><input name="colour" type="radio" value="red"></li>
+                <li><span style="color: green;">Green</span><input name="colour" type="radio" value="green"></li>
+                <li><span style="color: blue;">Blue</span><input name="colour" type="radio" value="blue"> </li>
+                </ul>
             </td>
         </tr>
         </table>
@@ -38,5 +42,30 @@
 </body>
 
 <style>
-
+    table {
+        background: black;
+        border: black;
+        border-radius: 50px;
+    }
 </style>
+
+<script>
+    enable()
+function enable() {
+    var elementSelector = document.querySelector('#genderSelect')
+    var genderBox = document.querySelector('#genderText')
+    if (elementSelector.value == "O") {
+        elementSelector.name = ""
+        genderBox.name = 'gender'
+        genderBox.style.display = "block"
+    }
+    else {
+        elementSelector.name = 'gender'
+        genderBox.name = ''
+        genderBox.style.display = "none"
+    }
+}
+function disable() {
+    
+}
+</script>

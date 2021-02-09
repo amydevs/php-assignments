@@ -6,5 +6,5 @@ $gender = $_POST['gender'];
 $colour = $_POST['colour'];
 	
 echo "Hello $fName $LName, your age is $age and 
-your favoriate colour is $colour" ;  
+your favoriate colour is $colour, $gender" ;  
 ?>
