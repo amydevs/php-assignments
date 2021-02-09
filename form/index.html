@@ -2,18 +2,18 @@
 <!DOCTYPE html>
 <body>
     <form name="form" method="post"  action="process.php">
-        <table width="263" border="1">
+        <table width="263" border="0">
         <tr>
             <td width="117"><p>First Name</p></td>
-            <td width="130"><input type="text" name="firstName"></td>
+            <td width="130"><input class="textbox" type="text" name="firstName"></td>
         </tr>
         <tr>
             <td height="26"><p>Last Name </p></td>
-            <td><input type="text" name="lastName"></td>
+            <td><input class="textbox" type="text" name="lastName"></td>
         </tr>
         <tr>
             <td width="117"><p>Age</p></td>
-            <td width="130"><input type="text" name="age"></td>
+            <td width="130"><input class="textbox" type="text" name="age"></td>
         </tr>
         <tr>
             <td width="117"><p>Gender</p></td>
@@ -22,8 +22,8 @@
                     <option value="M">Male</option>
                     <option value="F">Female</option>
                     <option value="O">Enter Below</option>
-                </select>
-                <input id="genderText" name="gender">
+                </select><br>
+                <input class="textbox" id="genderText" name="gender">
             </td>
         </tr>
         <tr>
@@ -37,15 +37,56 @@
             </td>
         </tr>
         </table>
-    <input name='run' type='submit' value='submit'>
+        <div id="inputCenter"><input id="submitButton" name='run' type='submit' value='Submit'></div>
     </form>
 </body>
 
 <style>
-    table {
-        background: black;
+    html {
+        height: 100%;
+    }
+    body {
+        background: #212629;
+        font-family: Open Sans,sans-serif;
+        color: #e22c78;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin: 0;
+    }
+    form {
+        background: rgba(255, 255, 255, 0.1);
         border: black;
         border-radius: 50px;
+        height: auto;
+        width: auto;
+        padding: 5%;
+    }
+    .textbox {
+        font-family: Open Sans,sans-serif;
+        color: #fff;
+        border-radius: 6px;
+        border: 0;
+        background: hsla(0,0%,100%,.2);
+        width: 150px;
+        padding: 5px 15px;
+        text-align: center;
+    }
+    #inputCenter{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #submitButton {
+        font-family: Open Sans,sans-serif;
+        color: #e22c78;
+        border-radius: 6px;
+        border: 0;
+        background: hsla(0,0%,100%,.2);
+        width: 150px;
+        padding: 5px 15px;
+        text-align: center;
     }
 </style>
 
