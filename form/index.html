@@ -1,6 +1,7 @@
 <!-- Written/Modified by June Yan (c) 2021 -->
 <!DOCTYPE html>
 <body>
+    <div id="formContainer">
     <form name="form" method="post"  action="process.php">
         <table width="263" border="0">
         <tr>
@@ -39,6 +40,7 @@
         </table>
         <div id="inputCenter"><input id="submitButton" name='run' type='submit' value='Submit'></div>
     </form>
+    </div>
 </body>
 
 <style>
@@ -55,11 +57,11 @@
         height: 100%;
         margin: 0;
     }
-    form {
+    #formContainer {
         background: rgba(255, 255, 255, 0.1);
         border: black;
         border-radius: 50px;
-        height: auto;
+        max-height: 400px;
         width: auto;
         padding: 5%;
     }
@@ -105,8 +107,5 @@ function enable() {
         genderBox.name = ''
         genderBox.style.display = "none"
     }
-}
-function disable() {
-    
 }
 </script>
