@@ -1,45 +1,54 @@
 <!-- Written/Modified by June Yan (c) 2021 -->
 <!DOCTYPE html>
+<header>
+    <title>Customisation Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</header>
+
 <body>
     <div id="formContainer">
-    <form name="form" method="post"  action="process.php">
-        <table width="263" border="0">
-        <tr>
-            <td width="117"><p>First Name</p></td>
-            <td width="130"><input class="textbox" type="text" name="firstName"></td>
-        </tr>
-        <tr>
-            <td height="26"><p>Last Name </p></td>
-            <td><input class="textbox" type="text" name="lastName"></td>
-        </tr>
-        <tr>
-            <td width="117"><p>Age</p></td>
-            <td width="130"><input class="textbox" type="text" name="age"></td>
-        </tr>
-        <tr>
-            <td width="117"><p>Gender</p></td>
-            <td width="130">
-                <select onclick="enable()" id="genderSelect" name="gender">
-                    <option value="M">Male</option>
-                    <option value="F">Female</option>
-                    <option value="O">Enter Below</option>
-                </select><br>
-                <input class="textbox" id="genderText" name="gender">
-            </td>
-        </tr>
-        <tr>
-            <td width="117"><p>Favourite Colour </p></td>
-            <td width="130">
-                <ul style="list-style-type: none;">
-                <li><span style="color: red;">Red</span><input name="colour" type="radio" value="red"></li>
-                <li><span style="color: green;">Green</span><input name="colour" type="radio" value="green"></li>
-                <li><span style="color: blue;">Blue</span><input name="colour" type="radio" value="blue"> </li>
-                </ul>
-            </td>
-        </tr>
-        </table>
-        <div id="inputCenter"><input id="submitButton" name='run' type='submit' value='Submit'></div>
-    </form>
+        <div style="text-align: center;">Please Enter Your Details:</div>
+        <form name="form" method="post" action="process.php">
+            <table width="263" border="0">
+                <tr>
+                    <td width="117"><p>First Name</p></td>
+                    <td width="130"><input class="textbox" type="text" name="firstName" /></td>
+                </tr>
+                <tr>
+                    <td height="26"><p>Last Name</p></td>
+                    <td><input class="textbox" type="text" name="lastName" /></td>
+                </tr>
+                <tr>
+                    <td width="117"><p>Age</p></td>
+                    <td width="130"><input class="textbox" type="text" name="age" /></td>
+                </tr>
+                <tr>
+                    <td width="117"><p>Gender</p></td>
+                    <td width="130">
+                        <select onclick="enable()" id="genderSelect" name="gender">
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                            <option value="O">Enter Below:</option>
+                        </select>
+                        <br>
+                        <!-- This input box is activated when the third option is selected. -->
+                        <input style="margin-top: 5px;" class="textbox" id="genderText" name="gender" />
+                    </td>
+                </tr>
+                <tr>
+                    <td width="117"><p>Favourite Colour</p></td>
+                    <td width="130">
+                        <ul style="list-style-type: none;">
+                            <li><span style="color: red;">Red</span><input name="colour" type="radio" value="red" /></li>
+                            <li><span style="color: green;">Green</span><input name="colour" type="radio" value="green" /></li>
+                            <li><span style="color: blue;">Blue</span><input name="colour" type="radio" value="blue" /></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <div id="inputCenter"><input id="submitButton" name="run" type="submit" value="Submit" /></div>
+        </form>
     </div>
 </body>
 
@@ -49,7 +58,7 @@
     }
     body {
         background: #212629;
-        font-family: Open Sans,sans-serif;
+        font-family: Open Sans, sans-serif;
         color: #e22c78;
         display: flex;
         justify-content: center;
@@ -62,50 +71,60 @@
         border: black;
         border-radius: 50px;
         max-height: 400px;
-        width: auto;
+        max-width: 300px;
         padding: 5%;
     }
     .textbox {
-        font-family: Open Sans,sans-serif;
+        font-family: Open Sans, sans-serif;
         color: #fff;
         border-radius: 6px;
         border: 0;
-        background: hsla(0,0%,100%,.2);
+        background: hsla(0, 0%, 100%, 0.2);
         width: 150px;
         padding: 5px 15px;
         text-align: center;
     }
-    #inputCenter{
+    #inputCenter {
         display: flex;
         align-items: center;
         justify-content: center;
     }
     #submitButton {
-        font-family: Open Sans,sans-serif;
+        font-family: Open Sans, sans-serif;
         color: #e22c78;
         border-radius: 6px;
         border: 0;
-        background: hsla(0,0%,100%,.2);
+        background: hsla(0, 0%, 100%, 0.2);
         width: 150px;
         padding: 5px 15px;
         text-align: center;
     }
+    select {
+        font-family: Open Sans, sans-serif;
+        color: #e22c78;
+        border-radius: 6px;
+        border: 0;
+        background: hsla(0, 0%, 100%, 0.2);
+        width: 150px;
+        padding: 5px 15px;
+        text-align: center;
+        box-sizing: border-box;
+    }
 </style>
 
 <script>
-    enable()
-function enable() {
-    var elementSelector = document.querySelector('#genderSelect')
-    var genderBox = document.querySelector('#genderText')
-    if (elementSelector.value == "O") {
-        elementSelector.name = ""
-        genderBox.name = 'gender'
-        genderBox.style.display = "block"
+    enable();
+    function enable() {
+        var elementSelector = document.querySelector("#genderSelect");
+        var genderBox = document.querySelector("#genderText");
+        if (elementSelector.value == "O") {
+            elementSelector.name = "";
+            genderBox.name = "gender";
+            genderBox.style.display = "block";
+        } else {
+            elementSelector.name = "gender";
+            genderBox.name = "";
+            genderBox.style.display = "none";
+        }
     }
-    else {
-        elementSelector.name = 'gender'
-        genderBox.name = ''
-        genderBox.style.display = "none"
-    }
-}
 </script>

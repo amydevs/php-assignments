@@ -1,7 +1,63 @@
 <!-- Written by June Yan (c) 2021 -->
 <!DOCTYPE html>
-<form method="POST" action="addResults.php">
-    <input name="x" type="text">
-    <input name="y" type="text">
-    <input type="submit">
-</form>
+
+<div id="formContainer">
+	<form method="POST" action="addResults.php">
+		<input class="textbox" name="x" type="text">
+		<input class="textbox" name="y" type="text">
+		<input id="submitButton" type="submit">
+	</form>
+</div>
+
+<style>
+	html {
+	height: 100%;
+	}
+	body {
+	background: #212629;
+	font-family: Open Sans,sans-serif;
+	color: #e22c78;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	margin: 0;
+	}
+	#formContainer {
+	background: rgba(255, 255, 255, 0.1);
+	border: black;
+	border-radius: 50px;
+	max-height: 400px;
+	width: auto;
+	padding: 5%;
+	}
+	form {
+	display: flex;
+	}
+	.textbox {
+	font-family: Open Sans,sans-serif;
+	color: #fff;
+	border-radius: 6px;
+	border: 0;
+	background: hsla(0,0%,100%,.2);
+	width: auto;
+	padding: 5px 15px;
+	text-align: center;
+	margin-right: 5px;
+	}
+	#inputCenter{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	}
+	#submitButton {
+	font-family: Open Sans,sans-serif;
+	color: #e22c78;
+	border-radius: 6px;
+	border: 0;
+	background: hsla(0,0%,100%,.2);
+	width: 150px;
+	padding: 5px 15px;
+	text-align: center;
+	}
+</style>

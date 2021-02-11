@@ -4,7 +4,8 @@ $LName = $_POST['lastName'];
 $age = $_POST['age'];
 $gender = $_POST['gender'];
 $colour = $_POST['colour'];
-	
+get_defined_vars();
 echo "Hello $fName $LName, your age is $age and 
-your favoriate colour is $colour, $gender" ;  
+your favoriate colour is $colour, $gender" ; 
+
 ?>
