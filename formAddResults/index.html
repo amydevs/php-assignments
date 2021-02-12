@@ -1,63 +1,137 @@
 <!-- Written by June Yan (c) 2021 -->
 <!DOCTYPE html>
 
-<div id="formContainer">
-	<form method="POST" action="addResults.php">
-		<input class="textbox" name="x" type="text">
-		<input class="textbox" name="y" type="text">
-		<input id="submitButton" type="submit">
-	</form>
-</div>
+<html lang="en">
+	<head>
+        <title>Addition Page</title>
+        <meta name="description" content="Addition Page">
+        <meta name="author" content="June Y">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+    </head>
+
+	<div id="formContainer">
+		<span style="position: absolute; transform: translateY(-100%) translateX(2%);">Input Numbers to Add:</span>
+		<form method="POST" action="addResults.php">
+			<input onkeyup="mask()" class="textbox" name="x" type="text"> 
+			<span style="display:flex; height: auto; align-items: center;">+</span>
+			<input onkeyup="mask()" class="textbox" name="y" type="text">
+			<span style="display:flex; height: auto; align-items: center;">=</span>
+			<input id="submitButton" type="submit" value="Add">
+		</form>
+	</div>
+</html>
+
+<script>
+	var object = {x:[''], y:['']}
+
+	mask();
+	dynamicSubmitButton();
+
+	function mask() {
+		var elementList = document.querySelectorAll('.textbox')
+		for (let index = 0; index < elementList.length; index++) {
+
+			var element = elementList[index];
+			var array = object[element.name]
+
+			if(isNaN(element.value)){
+				var array = object[element.name]
+				element.value = (array)[0]
+			}
+			else if (!isNaN(element.value)) {
+				array.unshift(element.value);
+			}	
+			array.length = 2;
+		}	
+		dynamicSubmitButton();
+	};
+
+	function dynamicSubmitButton() {
+		if ((object.x)[0] != '' && (object.y)[0] != '' )
+		{
+			var data = new URLSearchParams();
+			data.append('x', (object.x)[0])
+			data.append('y', (object.y)[0])
+			fetch('addResults.php', {
+				method: 'post',
+				headers: {"Content-Type": "application/x-www-form-urlencoded"},
+				body: data
+			}).then(async function(response) {
+				var answer = stringToHTML(await response.text()).querySelector('#answer').innerHTML.replace(/\s/g,'');
+				document.querySelector('#submitButton').value = answer;
+			})
+		}
+		else {
+			document.querySelector('#submitButton').value = 'Add';
+		}
+	};
+
+	function stringToHTML(str) {
+		var dom = document.createElement('div');
+		dom.innerHTML = str;
+		return dom;
+	};
+</script>
 
 <style>
+	/* sets variables */
+    :root {
+        --textColor: #e22c78;
+        --background: rgba(255, 255, 255, 0.1);
+    }
 	html {
-	height: 100%;
+		height: 100%;
 	}
 	body {
-	background: #212629;
-	font-family: Open Sans,sans-serif;
-	color: #e22c78;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-	margin: 0;
+		background: #212629;
+		font-family: Open Sans,sans-serif;
+		color: var(--textColor);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		margin: 0;
 	}
 	#formContainer {
-	background: rgba(255, 255, 255, 0.1);
-	border: black;
-	border-radius: 50px;
-	max-height: 400px;
-	width: auto;
-	padding: 5%;
+		background: var(--background);
+		border: black;
+		border-radius: 50px;
+		height: 25px;
+		width: auto;
+		padding: 5%;
 	}
 	form {
-	display: flex;
+		display: flex;
 	}
 	.textbox {
-	font-family: Open Sans,sans-serif;
-	color: #fff;
-	border-radius: 6px;
-	border: 0;
-	background: hsla(0,0%,100%,.2);
-	width: auto;
-	padding: 5px 15px;
-	text-align: center;
-	margin-right: 5px;
+		font-family: Open Sans,sans-serif;
+		color: #fff;
+		border-radius: 6px;
+		border: 0;
+		background: var(--background);
+		width: auto;
+		padding: 5px 15px;
+		text-align: center;
+		margin: 5px;
 	}
 	#inputCenter{
-	display: flex;
-	align-items: center;
-	justify-content: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 	#submitButton {
-	font-family: Open Sans,sans-serif;
-	color: #e22c78;
-	border-radius: 6px;
-	border: 0;
-	background: hsla(0,0%,100%,.2);
-	width: 150px;
-	padding: 5px 15px;
-	text-align: center;
+		font-family: Open Sans,sans-serif;
+
+		border-radius: 6px;
+		border: 0;
+		background: var(--background);
+		width: auto;
+		padding: 5px 15px;
+		text-align: center;
+		margin: 4px;
+		font-family: Open Sans,sans-serif;
+		color: var(--textColor);
+		cursor: pointer;
 	}
 </style>
