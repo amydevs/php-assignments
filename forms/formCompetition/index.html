@@ -1,24 +1,28 @@
 <!-- Written by June Yan (c) 2021 -->
 <!DOCTYPE html>
-	<html lang="en">
-		<head>
-			<meta charset="UTF-8">
-			<title>Demo</title>
-			<script src="js/vue.js"></script>
-		</head>
 
-		<body>
-			<div id="app">
-				<h1>{{ message }}</h1>
-			</div>
+<html lang="en">
 
-			<script>
-				new Vue({
-					el: "#app",
-					data: {
-						message: 'Hello Vue!'
-					}
-				});
-			</script>
-		</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Demo</title>
+		<script src="js/vue.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<h1>{{ message }}</h1>
+		</div>
+
+		
+	</body>
 </html>
+
+<script>
+	new Vue({
+		el: "#app",
+		data: {
+			message: 'Hello Vue!'
+		}
+	});
+</script>

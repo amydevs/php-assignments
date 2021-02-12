@@ -3,75 +3,84 @@
 
 <html lang="en">
 	<head>
-        <title>Addition Page</title>
-        <meta name="description" content="Addition Page">
-        <meta name="author" content="June Y">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
-    </head>
+		<title>Addition Page</title>
+		<meta name="description" content="Addition Page">
+		<meta name="author" content="June Y">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<script src="js/vue.js"></script>
+	</head>
 
-	<div id="formContainer">
-		<span style="position: absolute; transform: translateY(-100%) translateX(2%);">Input Numbers to Add:</span>
-		<form method="POST" action="addResults.php">
-			<input onkeyup="mask()" class="textbox" name="x" type="text"> 
-			<span style="display:flex; height: auto; align-items: center;">+</span>
-			<input onkeyup="mask()" class="textbox" name="y" type="text">
-			<span style="display:flex; height: auto; align-items: center;">=</span>
-			<input id="submitButton" type="submit" value="Add">
-		</form>
+	<div id="app">
+		<div id="formContainer">
+			<span style="position: absolute; transform: translateY(-100%) translateX(2%);">Input Numbers to Add:</span>
+			<form method="POST" action="addResults.php">
+				<input v-model="xValue" class="textbox" name="x" type="text"> 
+				<span style="display:flex; height: auto; align-items: center;">+</span>
+				<input v-model="yValue" class="textbox" name="y" type="text">
+				<span style="display:flex; height: auto; align-items: center;">=</span>
+				<input id="submitButton" type="submit" :value="inputValue">
+			</form>
+		</div>
 	</div>
 </html>
 
 <script>
-	var object = {x:[''], y:['']}
-
-	mask();
-	dynamicSubmitButton();
-
-	function mask() {
-		var elementList = document.querySelectorAll('.textbox')
-		for (let index = 0; index < elementList.length; index++) {
-
-			var element = elementList[index];
-			var array = object[element.name]
-
-			if(isNaN(element.value)){
-				var array = object[element.name]
-				element.value = (array)[0]
+	new Vue({
+		el: "#app",
+		data() { 
+			return {
+				xValue: '',
+				yValue: '',
+				inputValue: 'Add',
 			}
-			else if (!isNaN(element.value)) {
-				array.unshift(element.value);
-			}	
-			array.length = 2;
-		}	
-		dynamicSubmitButton();
-	};
-
-	function dynamicSubmitButton() {
-		if ((object.x)[0] != '' && (object.y)[0] != '' )
-		{
-			var data = new URLSearchParams();
-			data.append('x', (object.x)[0])
-			data.append('y', (object.y)[0])
-			fetch('addResults.php', {
-				method: 'post',
-				headers: {"Content-Type": "application/x-www-form-urlencoded"},
-				body: data
-			}).then(async function(response) {
-				var answer = stringToHTML(await response.text()).querySelector('#answer').innerHTML.replace(/\s/g,'');
-				document.querySelector('#submitButton').value = answer;
-			})
+		},
+		mounted() {
+		},
+		methods: {
+			dynamicSubmitButton() {
+				if ((this.xValue) != '' && (this.yValue) != '' )
+				{
+					var data = new URLSearchParams();
+					data.append('x', this.xValue)
+					data.append('y', this.yValue)
+					fetch('addResults.php', {
+						method: 'post',
+						headers: {"Content-Type": "application/x-www-form-urlencoded"},
+						body: data
+					}).then(async (response) => {
+						var answer = this.htmlString(await response.text()).querySelector('#answer').innerHTML.replace(/\s/g,'');
+						if (!isNaN(answer))this.inputValue = answer;
+						else this.inputValue = 'Add';
+					})
+				}
+				else {
+					this.inputValue = 'Add';
+				}
+			},
+			htmlString(str) {
+				var dom = document.createElement('div');
+				dom.innerHTML = str;
+				return dom;
+			}
+		},
+		watch: {
+			xValue: { 
+				handler(newValue, oldValue) {
+					if(isNaN(newValue) && !newValue.startsWith("-")) {this.xValue = oldValue}
+					this.dynamicSubmitButton()
+				},
+				deep: true
+			},
+			yValue: { 
+				handler(newValue, oldValue) {
+					if(isNaN(newValue) && !newValue.startsWith("-")) {this.yValue = oldValue}
+					this.dynamicSubmitButton()
+				},
+				deep: true
+			}
 		}
-		else {
-			document.querySelector('#submitButton').value = 'Add';
-		}
-	};
-
-	function stringToHTML(str) {
-		var dom = document.createElement('div');
-		dom.innerHTML = str;
-		return dom;
-	};
+	});
 </script>
 
 <style>
@@ -97,12 +106,13 @@
 		background: var(--background);
 		border: black;
 		border-radius: 50px;
-		height: 25px;
-		width: auto;
+		height: auto;
+		width: 100%;
 		padding: 5%;
 	}
 	form {
-		display: flex;
+		display: inline-flex;
+		width: auto;
 	}
 	.textbox {
 		font-family: Open Sans,sans-serif;
