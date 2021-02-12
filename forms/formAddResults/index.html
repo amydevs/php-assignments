@@ -14,7 +14,7 @@
 	<div id="app">
 		<div id="formContainer">
 			<span style="position: absolute; transform: translateY(-100%) translateX(2%);">Input Numbers to Add:</span>
-			<form method="POST" action="addResults.php">
+			<form method="POST" :action="formURI">
 				<input v-model="xValue" class="textbox" name="x" type="text"> 
 				<span style="display:flex; height: auto; align-items: center;">+</span>
 				<input v-model="yValue" class="textbox" name="y" type="text">
@@ -32,7 +32,9 @@
 			return {
 				xValue: '',
 				yValue: '',
+				inputDefaultValue: 'Add',
 				inputValue: 'Add',
+				formURI: 'addResults.php'
 			}
 		},
 		mounted() {
@@ -44,18 +46,18 @@
 					var data = new URLSearchParams();
 					data.append('x', this.xValue)
 					data.append('y', this.yValue)
-					fetch('addResults.php', {
+					fetch(this.formURI, {
 						method: 'post',
 						headers: {"Content-Type": "application/x-www-form-urlencoded"},
 						body: data
 					}).then(async (response) => {
 						var answer = this.htmlString(await response.text()).querySelector('#answer').innerHTML.replace(/\s/g,'');
 						if (!isNaN(answer))this.inputValue = answer;
-						else this.inputValue = 'Add';
+						else this.inputValue = this.inputDefaultValue;
 					})
 				}
 				else {
-					this.inputValue = 'Add';
+					this.inputValue = this.inputDefaultValue;
 				}
 			},
 			htmlString(str) {
