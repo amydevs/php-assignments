@@ -18,7 +18,7 @@
 			<span style="display:flex; height: auto; align-items: center;">+</span>
 			<input onkeyup="mask()" class="textbox" name="y" type="text">
 			<span style="display:flex; height: auto; align-items: center;">=</span>
-			<input id="submitButton" type="submit" value="Add">
+			<input id="submitButton" type="submit" value="Click to Add">
 		</form>
 	</div>
 </html>
@@ -60,11 +60,11 @@
 			}).then(async (response) => {
 				var answer = stringToHTML(await response.text()).querySelector('#answer').innerHTML.replace(/\s/g,'');
 				if (!isNaN(answer))document.querySelector('#submitButton').value = answer;
-				else document.querySelector('#submitButton').value = 'Add';
+				else document.querySelector('#submitButton').value = 'Click to Add';
 			})
 		}
 		else {
-			document.querySelector('#submitButton').value = 'Add';
+			document.querySelector('#submitButton').value = 'Click to Add';
 		}
 	};
 
