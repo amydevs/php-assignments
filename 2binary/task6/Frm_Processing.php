@@ -7,16 +7,22 @@
    <?php	
       $num1 = $_POST['number1'];
       $num2 = $_POST['number2'];
-      if ($num1 > $num2)
-      { 
-         echo "$num1 is Bigger." ;  
+      if (strlen($num1) == 0 || strlen($num2) == 0) {
+         echo "Error: No Data Entered";
       }
       else if ($num1 == $num2) {
-         echo "Numbers are equal";
+         echo "Numbers are equal.";
       }
-      else 
-      {
-         echo "$num2 is Bigger.";
+      else {
+         if ($num1 > $num2)
+         { 
+            echo "$num1 is Bigger." ;  
+         }
+         
+         else 
+         {
+            echo "$num2 is Bigger.";
+         }
       }
    ?>
 </html>

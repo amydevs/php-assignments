@@ -4,21 +4,15 @@
 		<meta charset="UTF-8">
 		<title>Answer</title>
 	</head>
-   <?php	
-      $num1 = $_POST['number1'];
-      $num2 = $_POST['number2'];
-      if ($num1 > $num2)
-      { 
-         echo "$num1 is Bigger." ;  
-      }
-      else if ($num1 == $num2) {
-         echo "Numbers are equal";
-      }
-      else 
-      {
-         echo "$num2 is Bigger.";
-      }
-   ?>
+    <?php	
+        $NumberOfLoops = $_POST['number'];
+        $count = 0;
+        While ($count <= $NumberOfLoops)
+        {
+            echo "Loop number $count <br>";
+            $count = $count  + 1 ;
+        }
+    ?>
 </html>
 
 <style>
