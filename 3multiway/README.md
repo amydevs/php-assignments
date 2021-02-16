@@ -44,3 +44,95 @@ graph TD
 | 24             | "none"               | None.                           |
 
 No, as the logic is different for 15-18, as well as there is no logic to properly handle people under the age of primary students.
+
+
+
+## Question 4
+
+Modify the algorithm below so that if:
+\- an age of 0 to 5 is entered then the output is - "name" to young for school.
+\- an age of greater then 18 is entered then the output is - "name" has left.school.
+
+```pseudocode
+BEGIN
+   Enter Name; Name
+   Enter Age; age
+   CASEWHERE age
+ 
+ 
+     CASE 5 to 7
+        PRINT 'Name is in infants school'
+     CASE 8 to 12
+        PRINT 'Name is in primary school'  
+     CASE 13 to 16
+        PRINT 'Name is in middle school'
+     CASE 17 to 18
+        PRINT 'Name is in senior school'
+ 
+     OTHERWISE
+        PRINT 'None' 
+   END CASE
+END
+```
+
+```pseudocode
+BEGIN
+   Enter Name; Name
+   Enter Age; age
+   CASEWHERE age
+ 
+	 CASE 0 to 5
+	 	PRINT 'Name is too young for school'
+     CASE 5 to 7
+        PRINT 'Name is in infants school'
+     CASE 8 to 12
+        PRINT 'Name is in primary school'  
+     CASE 13 to 16
+        PRINT 'Name is in middle school'
+     CASE 17 to 18
+        PRINT 'Name is in senior school'
+     CASE < 18
+     	PRINT 'Name has left school'
+ 
+     OTHERWISE
+        PRINT 'None' 
+   END CASE
+END
+```
+
+
+
+## Question 6
+
+```pseudocode
+BEGIN
+   Enter Name; Name
+   Enter Age; age
+   CASEWHERE age
+   
+  	If age is between 0 and 5
+    PRINT 'Name is too young for school'
+    else
+
+        Print "failed" 
+
+    endif
+	 CASE 0 to 5
+	 	PRINT 'Name is too young for school'
+     CASE 5 to 7
+        PRINT 'Name is in infants school'
+     CASE 8 to 12
+        PRINT 'Name is in primary school'  
+     CASE 13 to 16
+        PRINT 'Name is in middle school'
+     CASE 17 to 18
+        PRINT 'Name is in senior school'
+     CASE < 18
+     	PRINT 'Name has left school'
+ 
+     OTHERWISE
+        PRINT 'None' 
+   END CASE
+END
+```
+

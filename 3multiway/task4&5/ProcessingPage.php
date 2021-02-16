@@ -9,6 +9,9 @@
         $age=$_POST['age'];
 
         switch (true) {
+            case (intval($age) < 5) ;
+                echo "$name is too young for school.";
+                break;
             case (intval($age) >= 5 && intval($age) <= 7) ;
                 echo "$name is in infants school.";
                 break;
@@ -24,9 +27,12 @@
             case (intval($age) >= 17 && intval($age) <= 18) ;
                 echo "$name  is in senior school.";
                 break;	
+            case (intval($age) < 18) ;
+                echo "$name has left school.";
+                break;	
 
             default:
-                echo "$name is $age, and not in school.";
+                echo "None.";
         }
     ?>
 </html>

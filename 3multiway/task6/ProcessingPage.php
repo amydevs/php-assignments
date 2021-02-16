@@ -7,23 +7,33 @@
     <?php	
         $name = $_POST['name'];
         $age=$_POST['age'];
-        if (intval($age) >= 5 && intval($age) <= 7) {
-            echo "$name is in infants school.";
+        if (intval($age) < 5) {
+            echo "$name is too young for school.";
         }
         else {
-            if (intval($age) >= 8 && intval($age) <= 12) {
-                echo "$name  is in primary school.";
-            } 
+            if (intval($age) >= 5 && intval($age) <= 7) {
+                echo "$name is in infants school.";
+            }
             else {
-                if (intval($age) >= 13 && intval($age) <= 16) {
-                    echo "$name  is in secondary school.";
-                }	
+                if (intval($age) >= 8 && intval($age) <= 12) {
+                    echo "$name  is in primary school.";
+                } 
                 else {
-                    if (intval($age) >= 17 && intval($age) <= 18) {
-                        echo "$name  is in senior school.";
+                    if (intval($age) >= 13 && intval($age) <= 16) {
+                        echo "$name  is in secondary school.";
                     }	
                     else {
-                        echo "$name is $age, and not in school.";
+                        if (intval($age) >= 17 && intval($age) <= 18) {
+                            echo "$name  is in senior school.";
+                        }	
+                        else {
+                            if (intval($age) < 18) {
+                                echo "$name has left school.";
+                            }
+                            else {
+                                echo "None.";
+                            }
+                        }
                     }
                 }
             }
