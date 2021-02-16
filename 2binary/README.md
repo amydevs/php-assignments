@@ -84,12 +84,17 @@ a)  Write the flowchart algorithm for the above pseudocode.
 
 ``` mermaid
 graph TD
+	Start(("Start"))
+	Number1["Enter Number1"]
+	Number2["Enter Number2"]
     A["if(Number1 == Number2)"]
     B("PRINT 'Numbers are Equal.'")
     
     C["if(Number1 > Number2)"]
     D("PRINT 'Number1 is bigger.'")
     F("PRINT 'Number2 is bigger.'")
+    
+    Start --> Number1 --> Number2 --> A
     A --> |true| B
     A --> |else| C
     C --> |true| D

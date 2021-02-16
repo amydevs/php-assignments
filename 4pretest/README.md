@@ -2,16 +2,6 @@
 
 Try this example in your web browser using the supplied code below. Complete the table below before proceeding to the next activity.
 
-| Enter Number | Expected Output                                                                                | Actual Output                                                                                                |
-| ------------ | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| 5            | Loop number;1 
-<br />Loop number;2
-<br />Loop number;3
-<br />Loop number;4
-<br />Loop number;5 | Loop number 0<br/>Loop number 1<br/>Loop number 2<br/>Loop number 3<br/>Loop number 4<br/>Loop number 5 |
-
-
-
 Does the program produce the expected output? Why?
 
 No, as the index for the loop starts at 0. Therefore, when counting from zero to five, there are 6 numbers including zero itself.
