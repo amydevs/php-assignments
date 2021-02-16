@@ -11,6 +11,9 @@
       { 
          echo "$num1 is bigger" ;  
       }
+      else if ($num1 == $num2) {
+         echo "Numbers are equal";
+      }
       else 
       {
          echo "$num2 is bigger";
