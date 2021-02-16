@@ -1,6 +1,1 @@
-theme: jekyll-rtd-theme
-
-# debug:
-#   compress: true
-#   dist: false
-#   shortcodes: true
+remote_theme: carlosperate/jekyll-theme-rtd
