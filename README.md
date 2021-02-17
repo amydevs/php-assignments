@@ -9,9 +9,23 @@
 
 
 
-These answers are all typed in markdown. Watch me do these cool things:
+These answers are all typed in markdown. So you can do things like this:
 
 ```mermaid
+graph TD
+	A["control expression"]
+	B("DoSomething()")
+	C("DoSomethingElse()")
+	D("DoSomethingElseElse()")
+	E("Do Nothing.")
+	
+	A --> |case value list 1| B
+	A --> |case value list 2| C
+	A --> |case value list 3| D
+	A --> |Otherwise| E
+```
+=
+```
 graph TD
 	A["control expression"]
 	B("DoSomething()")
@@ -28,6 +42,12 @@ graph TD
 $$
 \frac{-b\pm\sqrt{b^2-4ac}}{2a}
 $$
+=
+``` 
+$$
+\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+$$
+```
 
 
 
