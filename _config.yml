@@ -1,5 +1,7 @@
 remote_theme: rundocs/jekyll-rtd-theme
 
+github.owner_name: AyanAmy
+
 # folders sort
 readme_index:
   with_frontmatter: true
@@ -43,5 +45,3 @@ plugins:
   - jekyll-avatar
   - jekyll-mentions
   - github-pages
-
-owner_name: AyanAmy
