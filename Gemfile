@@ -11,6 +11,7 @@ gem "jekyll", "~> 4.2.0"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima", "~> 2.5"
 
+gem 'jemoji'
 gem "jekyll-readme-index"
 gem 'jekyll-spaceship'
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
