@@ -1,8 +1,9 @@
 remote_theme: rundocs/jekyll-rtd-theme
 
 github.owner_name: AyanAmy
-
 github.owner.name: AyanAmy
+repository.owner_name: AyanAmy
+repository.owner.name: AyanAmy
 
 # folders sort
 readme_index:
