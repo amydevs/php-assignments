@@ -1,7 +1,6 @@
 remote_theme: rundocs/jekyll-rtd-theme
 
 author: AyanAmy
-github: AyanAmy
 
 # folders sort
 readme_index:
@@ -46,3 +45,6 @@ plugins:
   - jekyll-avatar
   - jekyll-mentions
   - github-pages
+
+script: |
+  document.querySelector('.copyright').querySelector('a').innerText = 'JuneY';
