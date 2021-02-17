@@ -43,3 +43,4 @@ plugins:
   - jemoji
   - jekyll-avatar
   - jekyll-mentions
+  - github-pages
