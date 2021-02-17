@@ -1,7 +1,6 @@
-## This is a Folder for my PHP School Assignments.
+# This is a Folder for my PHP School Assignments.
 
-Index:
-
+## Index:
 1. [Forms](1forms/) 
 2. [Binary](2binary/) 
 3. [Multiway](3multiway/) 
