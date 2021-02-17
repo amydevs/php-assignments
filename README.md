@@ -2,11 +2,11 @@
 
 Index:
 
-1. [Forms](1forms/README.md) 
-2. [Binary](2binary/README.md) 
-3. [Multiway](3multiway/README.md) 
-4. [PreTest](4pretest/README.md) 
-5. [PostTest](5posttest/README.md) 
+1. [Forms](1forms/) 
+2. [Binary](2binary/) 
+3. [Multiway](3multiway/) 
+4. [PreTest](4pretest/) 
+5. [PostTest](5posttest/) 
 
 
 
