@@ -1,3 +1,5 @@
+# 2 - Binary
+
 ## Question 1:
 
 Binary Selection (with Two Pathways):

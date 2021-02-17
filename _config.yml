@@ -1,15 +1,14 @@
 remote_theme: rundocs/jekyll-rtd-theme
 
+author: AyanAmy
+github: AyanAmy
+
 # folders sort
 readme_index:
   with_frontmatter: true
 
 meta:
-  key1: value1
   key2: value2
-  .
-  .
-  .
 
 google:
   gtag:
@@ -46,3 +45,4 @@ plugins:
   - jemoji
   - jekyll-avatar
   - jekyll-mentions
+  - github-pages
