@@ -5,7 +5,7 @@ readme_index:
   with_frontmatter: true
 
 meta:
-  key1: value1
+  'owner_name': 'AyanAmy'
   key2: value2
 
 google:
