@@ -33,7 +33,7 @@ if (!empty($_POST)){
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Demo</title>
+		<title>Competition Form</title>
 	</head>
 
 	<body>

@@ -20,7 +20,7 @@
 	<div id="app">
 		<div id="formContainer">
 			<span style="position: absolute; transform: translateY(-100%) translateX(2%);">Input Numbers to Add:</span>
-			<form method="POST" :action="formURI">
+			<form method="POST">
 				<input onkeyup="mask()" value="<?php if (!empty($_POST))echo $x; ?>" class="textbox" name="x" type="text"> 
 				<span style="display:flex; height: auto; align-items: center;">+</span>
 				<input onkeyup="mask()" value="<?php if (!empty($_POST))echo $y; ?>" class="textbox" name="y" type="text">
