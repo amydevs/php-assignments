@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 <?php
-$servername = "localhost";
+$servername = "172.16.238.12";
 $user = "root";
 $password = "";
 $dbname = "competition";
@@ -18,8 +18,11 @@ if ($conn->connect_error) {
 if (!empty($_POST)){
     $username = $_POST['username'];
     $score = $_POST['score'];
-    $sql = "INSERT INTO main (Username, Score)
-    VALUES ('$username', $score)";
+	$fName = $_POST['fName'];
+	$lName = $_POST['lName'];
+	$email = $_POST['email'];
+    $sql = "INSERT INTO main (Username, Score, fName, lName, Email)
+    VALUES ('$username', $score, '$fName', '$lName', '$email')";
     if ($conn->query($sql) === TRUE) {
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
@@ -43,6 +46,18 @@ if (!empty($_POST)){
 							<input class="textbox" name="username" type="text"> 
 						</span>
 						<span style="margin: 0px 5px 0px 5px;">
+							First Name:
+							<input class="textbox" name="fName" type="text"> 
+						</span>
+						<span style="margin: 0px 5px 0px 5px;">
+							Last Name:
+							<input class="textbox" name="lName" type="text"> 
+						</span>
+						<span style="margin: 0px 5px 0px 5px;">
+							Email:
+							<input class="textbox" name="email" type="text"> 
+						</span>
+						<span style="margin: 0px 5px 0px 5px;">
 							Score:
 							<input onkeyup="mask()" class="textbox mask" name="score" type="text">
 						</span>
@@ -61,7 +76,7 @@ if (!empty($_POST)){
 							$index = 1;
 							// output data of each row
 							while($row = mysqli_fetch_assoc($result)) {
-								echo '<div class=listItem>No. '.$index.'<div style="width: 100px"></div>User: '.$row["Username"].'<div style="width: 100px"></div>Score: '.$row["Score"].'<div style="width: 100px"></div>'.$row["SubmitionDate"].'</div>';
+								echo '<div class=listItem>No. '.$index.'<div class="resultDivider"></div>Name: '.$row["fName"].' '.$row["lName"].'<div class="resultDivider"></div>User: '.$row["Username"].'<div class="resultDivider"></div>Email: '.$row["Username"].'<div class="resultDivider"></div>Score: '.$row["Score"].'<div class="resultDivider"></div>'.$row["SubmitionDate"].'</div>';
 								$index++;
 							}
 						} else {
@@ -130,7 +145,6 @@ if (!empty($_POST)){
     body {
         background: #212629;
         font-family: Open Sans, sans-serif;
-		font-size: 20px;
         color: var(--textColor);
         display: flex;
         justify-content: center;
@@ -191,6 +205,9 @@ if (!empty($_POST)){
 		color: var(--textColor);
 		grid-template-columns: 50px, 200px;
 		grid-template-rows: 100%;
+	}
+	.resultDivider {
+		width: 50px
 	}
 </style>
 <style module>
