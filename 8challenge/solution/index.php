@@ -29,8 +29,13 @@
                         }
                         $currentIndex++;
                     }
-            
-                    echo "The letter $letter occured $letterCount times.";
+                    
+                    if ($letterCount <= 0) {
+                        echo "$letter did not occur.";
+                    }
+                    else {
+                        echo "The letter $letter occured $letterCount times.";
+                    }
                 }
             ?>
         </div>
