@@ -45,3 +45,9 @@ graph TD
 	if -- false --> endofloop
 ```
 
+## Question 2:
+
+| Enter Number | Expected Output                                              | Actual Output |
+| ------------ | ------------------------------------------------------------ | ------------- |
+| 5            | Loop number;1 <br/>Loop number;2<br/>Loop number;3<br/>Loop number;4<br/>Loop number;5 |               |
+
