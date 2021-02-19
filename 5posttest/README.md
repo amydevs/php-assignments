@@ -14,7 +14,7 @@ END
 graph TD
 	set["set 'condition'"]
 	repeat("REPEAT()")
-	if{{"if(condition is True)"}}
+	if{"if(condition is True)"}
 	do("do statements")
 	endofloop["End of Loop"]
 	set --> repeat --> do --> if -- true --> repeat
