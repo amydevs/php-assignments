@@ -4,29 +4,48 @@
 
 Draw flowcharts for these Pre-Test Loops: 
 
-```pseudocode
+``` pseudocode
 BEGIN
    set condition
    WHILE (condition is True)
-          (do statements)
+	    (do statements)
    ENDWHILE
 END
 ```
 
-
+```mermaid
+graph TD
+	set["set 'condition'"]
+	while{{"while(condition is True)"}}
+	do("do statements")
+	endofloop["End of Loop"]
+	set --> while -- true --> do
+	do --> while
+	while -- false --> endofloop["End of Loop"]
+```
 
 ```pseudocode
 BEGIN
-   Enter Number of Loops
+   Enter NumberofLoops
    Set count = 1
    WHILE count <= NumberOfLoops
-       PRINT This is loop number count
+       PRINT This is loop NumberofLoops count
        count = count + 1
    END WHILE
 END
 ```
 
-
+```mermaid
+graph TD
+	enter["Enter 'NumberofLoops'"]
+	set["'count' = 1"]
+	while{{"while(count <= NumberofLoops)"}}
+	do("PRINT 'This is loop NumberofLoops count'")
+	add("count = count + 1")
+	endofloop["End of Loop"]
+	enter --> set --> while -- true --> do --> add --> while
+	while -- false ---> endofloop["End of Loop"]
+```
 
 ## Question 2
 
@@ -80,7 +99,3 @@ BEGIN
    ENDIF
 END
 ```
-
-
-
-c) Code this solution

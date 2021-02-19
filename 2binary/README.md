@@ -6,7 +6,7 @@ Binary Selection (with Two Pathways):
 
 ```mermaid
 graph TD
-    A["if(condition)"] 
+	input["Input 'condition'"] --> A{"if(condition)"} 
     A --> |true| B("(statement sequence 1)")
     A --> |else| C("(statement sequence 1)")
 ```
@@ -15,7 +15,7 @@ Binary Selection (with One Pathway):
 
 ```mermaid
 graph TD
-    A["if(condition)"] 
+    input["Input 'condition'"] --> A{"if(condition)"} 
     A --> |true| B("(statement sequence 1)")
 ```
 
@@ -23,8 +23,8 @@ Binary Selection (Nested Statements):
 
 ```mermaid
 graph TD
-    A["if(condition)"]
-    B["if(condition)"] 
+    input["Input 'condition'"] --> A{"if(condition)"}
+    B{"if(condition)"}
     E("(statement sequence 3)")
     A --> |true| B
     A --> |else| E
@@ -38,7 +38,8 @@ graph TD
 
 ```mermaid
 graph TD
-    A["if(Number1 > Number2)"]
+	number1["Input 'Number1'"] --> number2["Input 'Number2'"] --> A
+    A{"if(Number1 > Number2)"}
     B("PRINT 'Number1 is bigger'")
     C("PRINT 'Number2 is bigger'")
     A --> |true| B
@@ -89,10 +90,10 @@ graph TD
 	Start(("Start"))
 	Number1["Enter Number1"]
 	Number2["Enter Number2"]
-    A["if(Number1 == Number2)"]
+    A{"if(Number1 == Number2)"}
     B("PRINT 'Numbers are Equal.'")
     
-    C["if(Number1 > Number2)"]
+    C{"if(Number1 > Number2)"}
     D("PRINT 'Number1 is bigger.'")
     F("PRINT 'Number2 is bigger.'")
     
