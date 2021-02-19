@@ -21,7 +21,7 @@ END
 ```mermaid
 graph TD
 	input["Input 'ControlExpression'"]
-	casewhere{{`CASEWHERE(ControlExpression)`}}
+	casewhere{{"CASEWHERE#40;'ControlExpression'#41;"}}
 	B("DoSomething()")
 	C("DoSomethingElse()")
 	D("DoSomethingElseElse()")
