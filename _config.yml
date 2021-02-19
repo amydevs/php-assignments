@@ -16,7 +16,7 @@ google:
 mathjax: # this will prased to json, default: {}
 
 mermaid:
-  custom: https://unpkg.com/mermaid/dist/mermaid.min.js
+  custom: https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
   initialize: # this will prased to json, default: {}
 
 scss:   # also _includes/extra/styles.scss
