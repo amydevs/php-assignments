@@ -23,12 +23,25 @@ graph TD
 
 ```pseudocode
 BEGIN
-   Enter Number of Loops
+   Enter NumberOfLoops
    Set count = 1
    REPEAT
       PRINT This is loop number; count
       count = count + 1
    UNTIL (count >= NumberOfLoops)
 END
+```
+
+```mermaid
+graph TD
+	enter["Enter 'NumberOfLoops'"]
+	set["count = 1"]
+	repeat("REPEAT()")
+	if{"if(count >= NumberOfLoops)"}
+	do("PRINT 'This is loop number; count'")
+	add("count = count + 1")
+	endofloop["End of Loop"]
+	enter --> set --> repeat --> do --> add --> if -- true --> repeat
+	if -- false --> endofloop
 ```
 
