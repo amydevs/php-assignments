@@ -16,7 +16,7 @@ END
 ```mermaid
 graph TD
 	set["set 'condition'"]
-	while{{"while(condition is True)"}}
+	while{{" while( condition is True ) "}}
 	do("do statements")
 	endofloop["End of Loop"]
 	set --> while -- true --> do
@@ -39,7 +39,7 @@ END
 graph TD
 	enter["Enter 'NumberofLoops'"]
 	set["'count' = 1"]
-	while{{"while(count <= NumberofLoops)"}}
+	while{{" while( count <= NumberofLoops ) "}}
 	do("PRINT 'This is loop NumberofLoops count'")
 	add("count = count + 1")
 	endofloop["End of Loop"]
