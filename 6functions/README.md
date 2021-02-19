@@ -1,2 +1,2 @@
-# 7 - Functions
+# 6 - Functions
 
