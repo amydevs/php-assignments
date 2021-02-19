@@ -1,4 +1,4 @@
-# 3 - Forms
+# 3 - Multiway
 
 ## Question 1
 
@@ -20,16 +20,17 @@ END
 
 ```mermaid
 graph TD
-	input["Input 'ControlExpression'"] --> A{{"CASEWHERE(ControlExpression)"}}
+	input["Input 'ControlExpression'"]
+	casewhere{{"CASEWHERE(ControlExpression)"}}
 	B("DoSomething()")
 	C("DoSomethingElse()")
 	D("DoSomethingElseElse()")
 	E("Do Nothing.")
-	
-	A --> |case value list 1| B
-	A --> |case value list 2| C
-	A --> |case value list 3| D
-	A --> |Otherwise| E
+	input --> casewhere
+	casewhere --> |case value list 1| B
+	casewhere --> |case value list 2| C
+	casewhere --> |case value list 3| D
+	casewhere --> |Otherwise| E
 ```
 
 
