@@ -73,10 +73,8 @@ For a pretest loop, the code is only ran if count is less than or equal to the N
 
 
 
-
-
-| **Enter Number** | **Counter** | **Expected Output** | **Actual Output** |
-| ---------------- | ----------- | ------------------- | ----------------- |
-| 5                | 5           | 5                   |                   |
-| 7                | 6           | 6                   |                   |
-|                  | 7           | 7                   |                   |
+| **Enter Number** | **Counter** | **Expected Output** | **Actual Output**                  |
+| ---------------- | ----------- | ------------------- | ---------------------------------- |
+| 5                | 5           | 5                   | Loop number; 5                     |
+| 7                | 6           | 6                   | Loop number; 6 <br/>Loop number; 7 |
+|                  | 7           | 7                   | Loop number; 7                     |
