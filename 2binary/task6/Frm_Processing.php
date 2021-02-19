@@ -1,4 +1,5 @@
 <!-- Written by June Yan (c) 2021 -->
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">

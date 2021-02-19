@@ -1,18 +1,14 @@
 <!-- Written/Modified by June Yan (c) 2021 -->
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Answer</title>
-	</head>
-    <?php	
-        $NumberOfLoops = $_POST['number'];
-        $count = 0;
-        While ($count <= $NumberOfLoops)
-        {
-            echo "Loop number $count <br>";
-            $count = $count  + 1 ;
-        }
+	<?php	
+    $NumberOfLoops = $_POST['number'];
+    $count = 0;
+    echo "Example output" ;
+    do{
+        echo "Loop number $count ";
+        $count = $count  + 1;
+    } while ($count <= $NumberOfLoops)
     ?>
 </html>
 
