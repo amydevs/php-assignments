@@ -80,7 +80,3 @@ BEGIN
    ENDIF
 END
 ```
-
-
-
-c) Code this solution

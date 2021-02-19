@@ -20,7 +20,7 @@ END
 
 ```mermaid
 graph TD
-	A["control expression"]
+	input["Input 'ControlExpression'"] --> A{{"CASEWHERE(ControlExpression)"}}
 	B("DoSomething()")
 	C("DoSomethingElse()")
 	D("DoSomethingElseElse()")
