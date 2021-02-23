@@ -57,20 +57,20 @@ script: |
   script2.src = "https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.15.0/flowchart.min.js";
   document.head.appendChild(script2);
 
-  function waitForElement(){
-    if(flowchart){
-        var list = document.querySelectorAll('.language-flow');
-        for (i=0; i<list.length;i++) {
-          var parsed = list[i].innerText;
-          list[i].innerText = "";
-          list[i].id="diagram"+i;
-          flowchart.parse(parsed).drawSVG(list[i].id);
-        };
-    }
-    else{
-        setTimeout(waitForElement, 250);
-    }
-  };
 
-  waitForElement();
+  var interval = setInterval(()=> {
+    if (flowchart) {
+      var list = document.querySelectorAll('.language-flow');
+      for (i=0; i<list.length;i++) {
+        console.log(list[i])
+        var parsed = list[i].innerText;
+        list[i].innerText = "";
+        list[i].id="diagram"+i;
+        flowchart.parse(parsed).drawSVG(list[i].id);
+      };
+      clearInterval(interval);
+    }
+  }, 200);
+  
+
   
