@@ -16,36 +16,6 @@ graph TD
         A --> |else| C("(statement sequence 2)") --> join
     linkStyle default interpolate stepAfter;   
 ```
-
-```mermaid
-    graph TD
-    linkStyle default interpolate basis
-    subgraph 1
-    A[gunung]-->B[NOUN]
-    C[Krakatau]--> D[NOUN]
-    E[Yang]-->F[PRON]
-    G[Pernah]-->H[ADV]
-    I[meletus] --> J[VERB]
-    K[mulai]-->L[VERB]
-    M[terbatuk-batuk] --> N[VERB]
-    end
-    subgraph 2
-    B --> O[FN]
-    D --> O
-    F --> O
-    J --> O
-    L --> P[FV]
-    N --> P
-    end
-    subgraph 3
-    O --> Q[Subject]
-    P --> R[Predicate]
-    end
-    subgraph 4
-    Q-->S[clause]
-    R-->S
-    end
-```
     
 
 Binary Selection (with One Pathway):
