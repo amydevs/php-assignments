@@ -49,12 +49,12 @@
     }
     if ($account == "True")
         {echo"Hi $UN welcome to the WebSite";}
-    else
+    else {
         if ($Found == "True")
             {  echo"Sorry $UN  your Password is INCORRECT";}
         else
             {  echo"Sorry $UN  you DO NOT have an account";}
-        
+    }        
     ?>
 </html>
 
