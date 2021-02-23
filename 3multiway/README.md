@@ -38,17 +38,7 @@ graph TD
 	casewhere --> |Otherwise| E
 	B & C & D & E --> T --> e
 	linkStyle default interpolate stepAfter;
-```
-
-
-
-```flow
-st=>start: Start
-case=>condition: CASEWHERE(ControlExpression)
-
-e=>end: Stop
-
-st->case(no)->e
+	
 ```
 
 
