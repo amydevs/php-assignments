@@ -50,7 +50,7 @@ script: |
   doThis();
   async function doThis() {
     await setHeaders();
-    var checkExist = setInterval(()=> {
+    var checkExist = setInterval(async ()=> {
       if (typeof flowchart !== 'undefined') {
         await render();
         clearInterval(checkExist);
