@@ -58,6 +58,7 @@ script: |
       if (typeof flowchart !== 'undefined') {
         clearInterval(checkExist);
         render();
+        console.log("rendered flowcharts");
       }
     }, 100);
   };
