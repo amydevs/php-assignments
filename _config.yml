@@ -82,7 +82,7 @@ script: |
       try {
         flowchart.parse(parsed).drawSVG(id, {'yes-text':'true', 'no-text':'false'});
         list[i].childNodes[1].nodeValue="";
-        list[i].childNodes[0].style="max-width:100% !important;";
+        list[i].childNodes[0].style="max-width:100% !important; height:auto !important;";
       }
       catch (err) {
         document.location=document.location;
