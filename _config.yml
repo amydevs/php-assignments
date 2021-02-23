@@ -72,7 +72,6 @@ script: |
   async function render() {
     var list = document.querySelectorAll('.language-flow');
     for (i=0; i<list.length;i++) {
-      console.log(list[i]);
       var parsed = list[i].innerText;
       list[i].innerText = "";
       list[i].id="diagram"+i;
