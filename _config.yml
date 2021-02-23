@@ -72,7 +72,7 @@ script: |
   function render() {
     var list = document.querySelectorAll('.language-flow');
     for (i=0; i<list.length;i++) {
-      var item = list[i]
+      var item = list[i];
       var parsed = item.innerText;
       var id = "diagram"+i;
       list[i].id=id;
