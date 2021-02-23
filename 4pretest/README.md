@@ -48,8 +48,8 @@ count++=>operation: count = count + 1
 
 e=>end: Stop
 
-st->enter->set->while(no, left)->e
-while(true)->print(right)->count++(top)->while
+st->enter->set->while(no, bottom)->e
+while(yes, right)->print(right)->count++(top)->while
 ```
 
 ## Question 2
