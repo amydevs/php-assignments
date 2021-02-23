@@ -20,6 +20,19 @@ cond(false)->op2->e
 
 Binary Selection (with One Pathway):
 
+```flow
+st=>start: Start
+op1=>inputoutput: Input 'condition'
+cond=>condition: if(condition)
+op=>operation: (statement sequence 1)
+op2=>operation: (statement sequence 2)
+e=>end: Stop
+
+st->op1->cond(true)->op->e
+```
+
+
+
 ```mermaid
 graph TD
     input["Input 'condition'"] --> A{"if(condition)"} 

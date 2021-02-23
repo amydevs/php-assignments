@@ -75,7 +75,7 @@ script: |
       var parsed = list[i].innerText;
       list[i].innerText = "";
       list[i].id="diagram"+i;
-      flowchart.parse(parsed).drawSVG(list[i].id);
+      flowchart.parse(parsed).drawSVG(list[i].id, {'yes-text':'true', 'no-text':'false'});
     };
     return;
   };
