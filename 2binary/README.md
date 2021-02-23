@@ -4,28 +4,16 @@
 
 Binary Selection (with Two Pathways):
 
-```mermaid
-graph TD
-    join(["|"])
-    stop([Stop])
-    start([Start]) --> input["Input 'condition'"] --> A{"if(condition)"} 
-    A --> |true| B("(statement sequence 1)") --> stop
-    join --> stop
-
-        A --> |else| C("(statement sequence 2)") --> join
-    linkStyle default interpolate stepAfter;   
-```
-
 ```flow
 st=>start: Start
 op1=>inputoutput: Input 'condition'
 cond=>condition: if(condition)
+op=>operation: (statement sequence 1)
+op2=>operation: (statement sequence 2)
 e=>end: Stop
 
-
-st->op1->cond(true)->e
-cond(else)->e
-
+st->op1->cond(true)->op->e
+cond(false)->op2->e
 ```
 
 
