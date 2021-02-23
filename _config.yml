@@ -79,9 +79,10 @@ script: |
       list[i].innerText = "";
       try {
         flowchart.parse(parsed).drawSVG(id, {'yes-text':'true', 'no-text':'false'});
+        item.children[0].width = "100%";
       }
       catch (err) {
-        flowchart.parse(parsed).drawSVG(id, {'yes-text':'true', 'no-text':'false'});
+        document.location=document.location;
       }
     };
     return;
