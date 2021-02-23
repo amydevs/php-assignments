@@ -41,8 +41,6 @@ graph TD
 	
 ```
 
-
-
 ## Question 2
 
 | **input(age)** | **Expected Output**  | **Actual Output**               |

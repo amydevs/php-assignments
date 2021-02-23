@@ -22,7 +22,7 @@ do=>operation: do statements
 e=>end: Stop
 
 st->set->while(no, left)->e
-while(true)->do(top)->while
+while(yes, right)->do(top)->while
 ```
 
 
