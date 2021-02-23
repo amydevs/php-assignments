@@ -5,7 +5,6 @@
 Binary Selection (with Two Pathways):
 
 ```mermaid
-
 graph TD
     join(["|"])
     stop([Stop])
@@ -16,7 +15,20 @@ graph TD
         A --> |else| C("(statement sequence 2)") --> join
     linkStyle default interpolate stepAfter;   
 ```
-    
+
+```flow
+st=>start: Start
+op1=>inputoutput: Input 'condition'
+cond=>condition: if(condition)
+e=>end: Stop
+
+
+st->op1->cond(true)->e
+cond(else)->e
+
+```
+
+
 
 Binary Selection (with One Pathway):
 
