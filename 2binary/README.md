@@ -16,8 +16,6 @@ st->op1->cond(true)->op->e
 cond(false)->op2->e
 ```
 
-
-
 Binary Selection (with One Pathway):
 
 ```flow
@@ -31,39 +29,40 @@ e=>end: Stop
 st->op1->cond(true)->op->e
 ```
 
-
-
-```mermaid
-graph TD
-    input["Input 'condition'"] --> A{"if(condition)"} 
-    A --> |true| B("(statement sequence 1)")
-```
-
 Binary Selection (Nested Statements):
 
-```mermaid
-graph TD
-    input["Input 'condition'"] --> A{"if(condition)"}
-    B{"if(condition)"}
-    E("(statement sequence 3)")
-    A --> |true| B
-    A --> |else| E
-    B --> |true| C("(statement sequence 1)")
-    B --> |else| D("(statement sequence 2)")
+```flow
+st=>start: Start
+input=>inputoutput: Input 'condition'
+op1=>inputoutput: Input 'condition'
+cond1=>condition: if(condition)
+cond2=>condition: if(condition)
+op1=>operation: (statement sequence 1)
+op2=>operation: (statement sequence 2)
+op3=>operation: (statement sequence 3)
+e=>end: Stop
+
+st->input->cond1(true)->cond2
+cond2(true)->op1->e
+cond2(false)->op2->e
+cond1(false)->op3->e
 ```
 
 
 
 ## Question 2:
 
-```mermaid
-graph TD
-	number1["Input 'Number1'"] --> number2["Input 'Number2'"] --> A
-    A{"if(Number1 > Number2)"}
-    B("PRINT 'Number1 is bigger'")
-    C("PRINT 'Number2 is bigger'")
-    A --> |true| B
-    A --> |else| C
+```flow
+st=>start: Start
+input1=>inputoutput: Input 'Number1'
+input2=>inputoutput: Input 'Number2'
+cond1=>condition: if(Number1 > Number2)
+op1=>operation: PRINT 'Number1 is bigger'
+op2=>operation: PRINT 'Number2 is bigger'
+e=>end: Stop
+
+st->input1->input2->cond1(true)->op1->e
+cond1(false)->op2->e
 ```
 
 ## Question 4:
@@ -105,24 +104,20 @@ END
 
 a)  Write the flowchart algorithm for the above pseudocode.
 
-``` mermaid
-graph TD
-	Start(("Start"))
-	Number1["Enter Number1"]
-	Number2["Enter Number2"]
-    A{"if(Number1 == Number2)"}
-    B("PRINT 'Numbers are Equal.'")
-    
-    C{"if(Number1 > Number2)"}
-    D("PRINT 'Number1 is bigger.'")
-    F("PRINT 'Number2 is bigger.'")
-    
-    Start --> Number1 --> Number2 --> A
-    A --> |true| B
-    A --> |else| C
-    C --> |true| D
-    C --> |else| F
+```flow
+st=>start: Start
+input1=>inputoutput: Input 'Number1'
+input2=>inputoutput: Input 'Number2'
+equal=>condition: if(Number1 == Number2)
+printequal=>operation: PRINT 'Numbers are Equal'
+bigger=>condition: if(Number1 > Number2)
+1isbigger=>operation: PRINT 'Number1 is bigger.'
+2isbigger=>operation: PRINT 'Number2 is bigger.'
+
+e=>end: Stop
+
+st->input1->input2->equal(true)->printequal->e
+equal(false)->bigger
+bigger(true)->1isbigger->e
+bigger(false)->2isbigger->e
 ```
-
-
-

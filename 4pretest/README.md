@@ -13,16 +13,19 @@ BEGIN
 END
 ```
 
-```mermaid
-graph TD
-	set["set 'condition'"]
-	while{" while( condition is True ) "}
-	do("do statements")
-	endofloop["End of Loop"]
-	set --> while -- true --> do
-	do --> while
-	while -- false --> endofloop["End of Loop"]
+```flow
+st=>start: Start
+set=>inputoutput: Set 'condition'
+while=>condition: while(condition is true)
+do=>operation: do statements
+
+e=>end: Stop
+
+st->set->while(no, left)->e
+while(true)->do(top)->while
 ```
+
+
 
 ```pseudocode
 BEGIN
@@ -35,16 +38,18 @@ BEGIN
 END
 ```
 
-```mermaid
-graph TD
-	enter["Enter 'NumberofLoops'"]
-	set["'count' = 1"]
-	while{" while( count <= NumberofLoops ) "}
-	do("PRINT 'This is loop NumberofLoops count'")
-	add("count = count + 1")
-	endofloop["End of Loop"]
-	enter --> set --> while -- true --> do --> add --> while
-	while -- false ---> endofloop["End of Loop"]
+```flow
+st=>start: Start
+enter=>inputoutput: Enter 'NumberofLoops'
+set=>operation: Variable 'count' = 1
+while=>condition: while(condition is true)
+print=>operation: PRINT 'This is loop NumberofLoops count'
+count++=>operation: count = count + 1
+
+e=>end: Stop
+
+st->enter->set->while(no, left)->e
+while(true)->print(right)->count++(top)->while
 ```
 
 ## Question 2

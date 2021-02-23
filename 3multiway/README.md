@@ -20,17 +20,24 @@ END
 
 ```mermaid
 graph TD
-	input["Input 'ControlExpression'"]
+	s([Start])
+	e([Stop])
+    T([*])
+    
+	input[/"Input 'ControlExpression'"/]
 	casewhere{"CASEWHERE(ControlExpression)"}
 	B("DoSomething()")
 	C("DoSomethingElse()")
 	D("DoSomethingElseElse()")
 	E("Do Nothing.")
-	input --> casewhere
+
+	s --> input --> casewhere
 	casewhere --> |case value list 1| B
 	casewhere --> |case value list 2| C
 	casewhere --> |case value list 3| D
 	casewhere --> |Otherwise| E
+	B & C & D & E --> T --> e
+	linkStyle default interpolate stepAfter;
 ```
 
 
