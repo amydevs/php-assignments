@@ -55,7 +55,7 @@ script: |
         await render();
         clearInterval(checkExist);
       }
-    }, 200);
+    }, 150);
   };
   async function setHeaders() {
     document.querySelector('.copyright').querySelector('a').innerText = 'JuneY';
