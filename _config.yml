@@ -47,30 +47,36 @@ plugins:
   - github-pages
 
 script: |
-  document.querySelector('.copyright').querySelector('a').innerText = 'JuneY';
-
-  var script1 = document.createElement('script');
-  script1.src = "https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js";
-  document.head.appendChild(script1);
-
-  var script2 = document.createElement('script');
-  script2.src = "https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.15.0/flowchart.min.js";
-  document.head.appendChild(script2);
-
-
-  var interval = setInterval(()=> {
-    if (flowchart) {
-      var list = document.querySelectorAll('.language-flow');
-      for (i=0; i<list.length;i++) {
-        console.log(list[i])
-        var parsed = list[i].innerText;
-        list[i].innerText = "";
-        list[i].id="diagram"+i;
-        flowchart.parse(parsed).drawSVG(list[i].id);
+  doThis()
+  async function doThis() {
+    await setHeaders();
+    var interval = setInterval(()=> {
+      if (flowchart) {
+        var list = document.querySelectorAll('.language-flow');
+        for (i=0; i<list.length;i++) {
+          console.log(list[i]);
+          var parsed = list[i].innerText;
+          list[i].innerText = "";
+          list[i].id="diagram"+i;
+          flowchart.parse(parsed).drawSVG(list[i].id);
+        };
+        clearInterval(interval);
       };
-      clearInterval(interval);
-    }
-  }, 200);
+    }, 200);
+  };
+  async function setHeaders() {
+    document.querySelector('.copyright').querySelector('a').innerText = 'JuneY';
+
+    var script1 = document.createElement('script');
+    script1.src = "https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js";
+    document.head.appendChild(script1);
+
+    var script2 = document.createElement('script');
+    script2.src = "https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.15.0/flowchart.min.js";
+    document.head.appendChild(script2);
+  };
+  
+  
   
 
   
