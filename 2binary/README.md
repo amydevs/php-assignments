@@ -5,10 +5,16 @@
 Binary Selection (with Two Pathways):
 
 ```mermaid
+
 graph TD
-	input["Input 'condition'"] --> A{"if(condition)"} 
-    A --> |true| B("(statement sequence 1)")
-    A --> |else| C("(statement sequence 1)")
+	
+	join([ ])
+	stop([Stop])
+	start([Start]) --> input["Input 'condition'"] --> A{"if(condition)"} 
+    A --> |true| B("(statement sequence 1)") --> join
+    A --> |else| C("(statement sequence 2)") --> join
+    join --> stop
+    linkStyle default interpolate stepBefore;
 ```
 
 Binary Selection (with One Pathway):

@@ -2,13 +2,14 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Solution</title>
+        <title>Letter Counter</title>
         <meta name="description" content="June's Form">
         <meta name="author" content="June Y">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
     </head>
     <div id="formContainer">
+        <h1>Letter Counter:</h1>
         <form name="form" method="post" action="">
             Select Letter to Count: <input name='letter' type='text' value="<?php if(!empty($_POST)) {echo $_POST['letter'];} ?>"><br>
             <div style="margin:5px" id="inputCenter"><button name='run' type='submit' value='run'>Run</button></div>
