@@ -47,7 +47,7 @@ plugins:
   - github-pages
 
 script: |
-  doThis()
+  doThis();
   async function doThis() {
     await setHeaders();
     var interval = setInterval(()=> {
