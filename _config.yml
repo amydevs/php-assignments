@@ -48,10 +48,10 @@ plugins:
 
 script: |
   document.querySelector('.copyright').querySelector('a').innerText = 'JuneY';
-  script1 = document.createElement('script');
+  script1.src = document.createElement('script');
   script1 = "http://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js";
   document.head.appendChild(script1);
   script2 = document.createElement('script');
-  script2 = "http://flowchart.js.org/flowchart-latest.js";
+  script2.src = "http://flowchart.js.org/flowchart-latest.js";
   document.head.appendChild(script2);
 
