@@ -6,8 +6,9 @@
 3. [Multiway](3multiway/) 
 4. [PreTest](4pretest/) 
 5. [PostTest](5posttest/) 
-
-
+6. [Functions](6functions/) 
+7. [Arrays](7arrays/) 
+8. [Challenge](8challenge/) 
 
 These answers are all typed in markdown. So you can do things like this:
 
@@ -25,6 +26,7 @@ graph TD
 	A --> |Otherwise| E
 ```
 =
+
 ```
 graph TD
 	A["control expression"]
@@ -42,8 +44,7 @@ graph TD
 $$
 \frac{-b\pm\sqrt{b^2-4ac}}{2a}
 $$
-=
-``` 
+``` tex
 $$
 \frac{-b\pm\sqrt{b^2-4ac}}{2a}
 $$
