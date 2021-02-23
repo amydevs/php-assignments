@@ -42,6 +42,17 @@ graph TD
 
 
 
+```flow
+st=>start: Start
+case=>condition: CASEWHERE(ControlExpression)
+
+e=>end: Stop
+
+st->case(no)->e
+```
+
+
+
 ## Question 2
 
 | **input(age)** | **Expected Output**  | **Actual Output**               |
@@ -62,7 +73,7 @@ No, as the logic is different for 15-18, as well as there is no logic to properl
 
 Modify the algorithm below so that if:
 \- an age of 0 to 5 is entered then the output is - "name" to young for school.
-\- an age of greater then 18 is entered then the output is - "name" has left.school.
+\- an age of greater then 18 is entered then the output is - "name" has left school.
 
 ```pseudocode
 BEGIN
