@@ -52,7 +52,7 @@ script: |
     await setHeaders();
     var checkExist = setInterval(async ()=> {
       if (typeof flowchart !== 'undefined') {
-        await render();
+        render();
         clearInterval(checkExist);
       }
     }, 250);
@@ -69,13 +69,20 @@ script: |
     document.head.appendChild(script2);
     return;
   };
-  async function render() {
+  function render() {
     var list = document.querySelectorAll('.language-flow');
     for (i=0; i<list.length;i++) {
-      var parsed = list[i].innerText;
+      var item = list[i]
+      var parsed = item.innerText;
+      var id = "diagram"+i;
+      list[i].id=id;
       list[i].innerText = "";
-      list[i].id="diagram"+i;
-      flowchart.parse(parsed).drawSVG(list[i].id, {'yes-text':'true', 'no-text':'false'});
+      try {
+        flowchart.parse(parsed).drawSVG(id, {'yes-text':'true', 'no-text':'false'});
+      }
+      catch (err) {
+        flowchart.parse(parsed).drawSVG(id, {'yes-text':'true', 'no-text':'false'});
+      }
     };
     return;
   };
