@@ -78,9 +78,9 @@ script: |
       var parsed = item.innerText;
       var id = "diagram"+i;
       list[i].id=id;
-      list[i].innerText = "";
       try {
         flowchart.parse(parsed).drawSVG(id, {'yes-text':'true', 'no-text':'false'});
+        list[i].childNodes[1].nodeValue="";
         list[i].children[0].width = "100%";
       }
       catch (err) {
