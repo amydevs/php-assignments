@@ -18,8 +18,8 @@ do=>operation: do statements
 
 e=>end: Stop
 
-st->set->do->while(no, left)->e
-while(true)->do
+st->set->do->while(no, bottom)->e
+while(yes, right)->do
 ```
 
 
@@ -35,19 +35,6 @@ BEGIN
 END
 ```
 
-```mermaid
-graph TD
-	enter["Enter 'NumberOfLoops'"]
-	set["count = 1"]
-	repeat("do")
-	if{"while(count >= NumberOfLoops)"}
-	do("PRINT 'This is loop number; count'")
-	add("count = count +1")
-	endofloop["End of Loop"]
-	enter --> set --> repeat --> do --> add --> if -- true --> repeat
-	if -- false --> endofloop
-```
-
 ```flow
 st=>start: Start
 enter=>inputoutput: Enter 'NumberofLoops'
@@ -58,8 +45,8 @@ count++=>operation: count = count + 1
 
 e=>end: Stop
 
-st->set->do->count++->while(no, left)->e
-while(true)->do
+st->set->do->count++->while(no, bottom)->e
+while(yes,right)->do
 ```
 
 
