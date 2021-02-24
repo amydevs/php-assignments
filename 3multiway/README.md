@@ -16,30 +16,7 @@ BEGIN
 	ENDCASE
 END
 ```
-
-
-```mermaid
-graph TD
-	s([Start])
-	e([Stop])
-    T([*])
-    
-	input[/"Input 'ControlExpression'"/]
-	casewhere{"CASEWHERE(ControlExpression)"}
-	B("DoSomething()")
-	C("DoSomethingElse()")
-	D("DoSomethingElseElse()")
-	E("Do Nothing.")
-
-	s --> input --> casewhere
-	casewhere --> |case value list 1| B
-	casewhere --> |case value list 2| C
-	casewhere --> |case value list 3| D
-	casewhere --> |Otherwise| E
-	B & C & D & E --> T --> e
-	linkStyle default interpolate stepAfter;
-	
-```
+![multiway1](drawio/multiway1.drawio.svg)
 
 ## Question 2
 
