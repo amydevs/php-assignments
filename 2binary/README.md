@@ -27,6 +27,7 @@ op2=>operation: (statement sequence 2)
 e=>end: Stop
 
 st->op1->cond(true)->op->e
+cond(false)->e
 ```
 
 Binary Selection (Nested Statements):
