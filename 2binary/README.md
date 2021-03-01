@@ -58,7 +58,7 @@ st=>start: Start
 input1=>inputoutput: Input 'Number1'
 input2=>inputoutput: Input 'Number2'
 cond1=>condition: if(Number1 > Number2)
-op1=>operation: PRINT 'Number1 is bigger'
+op1=>inputoutput: PRINT 'Number1 is bigger'
 op2=>operation: PRINT 'Number2 is bigger'
 e=>end: Stop
 

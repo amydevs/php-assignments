@@ -38,19 +38,7 @@ BEGIN
 END
 ```
 
-```flow
-st=>start: Start
-enter=>inputoutput: Enter 'NumberofLoops'
-set=>operation: Variable 'count' = 1
-while=>condition: while(condition is true)
-print=>operation: PRINT 'This is loop NumberofLoops count'
-count++=>operation: count = count + 1
-
-e=>end: Stop
-
-st->enter->set->while(no, bottom)->e
-while(yes, right)->print(right)->count++(top)->while
-```
+![diagram2](drawio/diagram2.drawio.svg)
 
 ## Question 2
 
