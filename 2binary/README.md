@@ -57,5 +57,5 @@ END
 
 a)  Write the flowchart algorithm for the above pseudocode.
 
-![diagram1](drawio/task3/diagram1.drawio.svg)
+![diagram1](drawio/task4/diagram1.drawio.svg)
 
