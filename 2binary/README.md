@@ -16,18 +16,7 @@ Binary Selection (Nested Statements):
 
 ## Question 2:
 
-```flow
-st=>start: Start
-input1=>inputoutput: Input 'Number1'
-input2=>inputoutput: Input 'Number2'
-cond1=>condition: if(Number1 > Number2)
-op1=>inputoutput: PRINT 'Number1 is bigger'
-op2=>operation: PRINT 'Number2 is bigger'
-e=>end: Stop
-
-st->input1->input2->cond1(true)->op1->e
-cond1(false)->op2->e
-```
+![diagram1](drawio/task2/diagram1.drawio.svg)
 
 ## Question 4:
 
@@ -68,20 +57,5 @@ END
 
 a)  Write the flowchart algorithm for the above pseudocode.
 
-```flow
-st=>start: Start
-input1=>inputoutput: Input 'Number1'
-input2=>inputoutput: Input 'Number2'
-equal=>condition: if(Number1 == Number2)
-printequal=>operation: PRINT 'Numbers are Equal'
-bigger=>condition: if(Number1 > Number2)
-1isbigger=>operation: PRINT 'Number1 is bigger.'
-2isbigger=>operation: PRINT 'Number2 is bigger.'
+![diagram1](drawio/task3/diagram1.drawio.svg)
 
-e=>end: Stop
-
-st->input1->input2->equal(true)->printequal->e
-equal(false)->bigger
-bigger(true)->1isbigger->e
-bigger(false)->2isbigger->e
-```
