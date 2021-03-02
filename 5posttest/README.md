@@ -10,18 +10,7 @@ BEGIN
 END
 ```
 
-```flow
-st=>start: Start
-set=>inputoutput: Set 'condition'
-while=>condition: while(condition is true)
-do=>operation: do statements
-
-e=>end: Stop
-
-st->set->do->while(no, bottom)->e
-while(yes, right)->do
-```
-
+![diagram1](drawio/diagram1.drawio.svg)
 
 
 ```pseudocode
@@ -35,20 +24,7 @@ BEGIN
 END
 ```
 
-```flow
-st=>start: Start
-enter=>inputoutput: Enter 'NumberofLoops'
-set=>operation: Variable 'count' = 1
-do=>inputoutput: "PRINT 'This is loop number; count'"
-while=>condition: while(count >= NumberofLoops)
-count++=>operation: count = count + 1
-
-e=>end: Stop
-
-st->set->do->count++->while(no, bottom)->e
-while(yes,right)->do
-```
-
+![diagram2](drawio/diagram2.drawio.svg)
 
 
 ## Question 2:

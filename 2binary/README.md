@@ -4,52 +4,15 @@
 
 Binary Selection (with Two Pathways):
 
-```flow
-st=>start: Start
-op1=>inputoutput: Input 'condition'
-cond=>condition: if(condition)
-op=>operation: (statement sequence 1)
-op2=>operation: (statement sequence 2)
-e=>end: Stop
-
-st->op1->cond(true)->op->e
-cond(false)->op2->e
-```
+![diagram1](drawio/task1/diagram1.drawio.svg)
 
 Binary Selection (with One Pathway):
 
-```flow
-st=>start: Start
-op1=>inputoutput: Input 'condition'
-cond=>condition: if(condition)
-op=>operation: (statement sequence 1)
-op2=>operation: (statement sequence 2)
-e=>end: Stop
-
-st->op1->cond(true)->op->e
-cond(false)->e
-```
+![diagram2](drawio/task1/diagram2.drawio.svg)
 
 Binary Selection (Nested Statements):
 
-```flow
-st=>start: Start
-input=>inputoutput: Input 'condition'
-op1=>inputoutput: Input 'condition'
-cond1=>condition: if(condition)
-cond2=>condition: if(condition)
-op1=>operation: (statement sequence 1)
-op2=>operation: (statement sequence 2)
-op3=>operation: (statement sequence 3)
-e=>end: Stop
-
-st->input->cond1(true)->cond2
-cond2(true)->op1->e
-cond2(false)->op2->e
-cond1(false)->op3->e
-```
-
-
+![diagram3](drawio/task1/diagram3.drawio.svg)
 
 ## Question 2:
 

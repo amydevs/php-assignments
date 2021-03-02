@@ -13,18 +13,7 @@ BEGIN
 END
 ```
 
-```flow
-st=>start: Start
-set=>inputoutput: Set 'condition'
-while=>condition: while(condition is true)
-do=>operation: do statements
-
-e=>end: Stop
-
-st->set->while(no, bottom)->e
-while(yes, right)->do(top)->while
-```
-
+![diagram1](drawio/diagram1.drawio.svg)
 
 
 ```pseudocode
