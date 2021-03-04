@@ -38,7 +38,7 @@ When there is no data, "is Bigger." is echoed. This is as one of the two same bl
 
 
 
-## Question 4:
+## Question 5:
 
 ```pseudocode
 BEGIN
@@ -57,5 +57,5 @@ END
 
 a)  Write the flowchart algorithm for the above pseudocode.
 
-![diagram1](drawio/task4/diagram1.drawio.svg)
+![diagram1](drawio/task5/diagram1.drawio.svg)
 

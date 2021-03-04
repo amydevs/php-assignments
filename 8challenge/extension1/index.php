@@ -33,12 +33,12 @@
                         }
                         $currentIndex++;
                     }
-                    echo '<span>'.str_replace($letter, "<b>$letter</b>",$contents).'</span> <br/>';
+                    echo '<span style="width: 100%; text-align:center">'.str_replace($letter, "<b>$letter</b>",$contents).'</span> <br/>';
                     if ($letterCount <= 0) {
                         echo "$letter did not occur.";
                     }
                     else {
-                        echo "The letter $letter occured $letterCount times.";
+                        echo "<span style='width: 100%; text-align:center'>The letter $letter occured $letterCount times.</span>";
                     }
                 }
             ?>
@@ -83,6 +83,7 @@
         text-align: center;
     }
     #inputCenter {
+        flex-wrap: wrap;
         display: flex;
         align-items: center;
         justify-content: center;
