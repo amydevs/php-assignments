@@ -15,27 +15,32 @@
         <h1>Letter Counter:</h1>
         <div id="inputCenter">
             <?php
-                $letterCountArray = [];
-        
+                $letterCountArray = array();
+
                 $currentIndex = 0;
                 $contents = file_get_contents('junk.txt', true) or die("Unable to open file!");
         
                 while ($currentIndex <= strlen($contents)-1) {
-                    $currentLetter = $contents[$currentIndex];
-                    if ($letterCountArray[$currentLetter]) {
-
+                    $currentLetter = strval($contents[$currentIndex]);
+                    if (!array_key_exists($currentLetter, $letterCountArray)) {
+                        $letterCountArray[$currentLetter] = 1;
                     }
                     else {
-                        
+                        $letterCountArray[$currentLetter]++;  
                     }
+                    $currentIndex++;
                 }
-                echo '<span style="width: 100%; text-align:center">'.str_replace($letter, "<b>$letter</b>",$contents).'</span> <br/>';
-                if ($letterCount <= 0) {
-                    echo "$letter did not occur.";
+                $maxs = array_keys($letterCountArray, max($letterCountArray));
+                foreach ($maxs as $key => $value) {
+                    echo "$value,";
                 }
-                else {
-                    echo "<span style='width: 100%; text-align:center'>The letter $letter occured $letterCount times.</span>";
-                }
+                // echo '<span style="width: 100%; text-align:center">'.str_replace($letter, "<b>$letter</b>",$contents).'</span> <br/>';
+                // if ($letterCount <= 0) {
+                //     echo "$letter did not occur.";
+                // }
+                // else {
+                //     echo "<span style='width: 100%; text-align:center'>The letter $letter occured $letterCount times.</span>";
+                // }
             ?>
         </div>
     </div>
