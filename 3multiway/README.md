@@ -93,33 +93,33 @@ END
 
 ```pseudocode
 BEGIN
-   Enter Name; Name
-   Enter Age; age
-   CASEWHERE age
-   
-  	If age is between 0 and 5
-    PRINT 'Name is too young for school'
-    else
-
-        Print "failed" 
-
-    endif
-	 CASE 0 to 5
-	 	PRINT 'Name is too young for school'
-     CASE 5 to 7
-        PRINT 'Name is in infants school'
-     CASE 8 to 12
-        PRINT 'Name is in primary school'  
-     CASE 13 to 16
-        PRINT 'Name is in middle school'
-     CASE 17 to 18
-        PRINT 'Name is in senior school'
-     CASE < 18
-     	PRINT 'Name has left school'
- 
-     OTHERWISE
-        PRINT 'None' 
-   END CASE
+   	Enter Name; Name
+   	Enter Age; age
+  	IF age is between 0 and 5 THEN
+    	PRINT 'Name is too young for school'
+    ELSE
+		IF age is between 5 and 7 THEN
+    		PRINT 'Name is in infants school'
+    	ELSE
+        	IF age is between 8 and 12 THEN
+        		PRINT 'Name is in primary school'
+        	ELSE
+                IF age is between 13 and 16 THEN
+                	PRINT 'Name is in middle school'
+                ELSE
+                    IF age is between 17 and 18 THEN
+                        PRINT 'Name is in senior school'
+                    ELSE
+                        IF age is more than 18 THEN
+                        	PRINT 'Name has left school'
+                        ELSE
+                        	PRINT 'None'
+                        END IF
+                    END IF
+                END IF
+        	END IF
+        END IF
+   	END IF
 END
 ```
 
