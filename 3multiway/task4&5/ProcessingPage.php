@@ -27,7 +27,7 @@
             case (intval($age) >= 17 && intval($age) <= 18) ;
                 echo "$name  is in senior school.";
                 break;	
-            case (intval($age) < 18) ;
+            case (intval($age) > 18) ;
                 echo "$name has left school.";
                 break;	
 

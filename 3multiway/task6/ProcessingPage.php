@@ -27,7 +27,7 @@
                             echo "$name  is in senior school.";
                         }	
                         else {
-                            if (intval($age) < 18) {
+                            if (intval($age) > 18) {
                                 echo "$name has left school.";
                             }
                             else {

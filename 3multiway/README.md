@@ -68,21 +68,21 @@ BEGIN
    Enter Age; age
    CASEWHERE age
  
-	 CASE 0 to 5
-	 	PRINT 'Name is too young for school'
-     CASE 5 to 7
-        PRINT 'Name is in infants school'
-     CASE 8 to 12
-        PRINT 'Name is in primary school'  
-     CASE 13 to 16
-        PRINT 'Name is in middle school'
-     CASE 17 to 18
-        PRINT 'Name is in senior school'
-     CASE < 18
-     	PRINT 'Name has left school'
+	   CASE 0 to 5
+	 	   PRINT 'Name is too young for school'
+      CASE 5 to 7
+         PRINT 'Name is in infants school'
+      CASE 8 to 12
+         PRINT 'Name is in primary school'  
+      CASE 13 to 16
+         PRINT 'Name is in middle school'
+      CASE 17 to 18
+         PRINT 'Name is in senior school'
+      CASE > 18
+     	   PRINT 'Name has left school'
  
-     OTHERWISE
-        PRINT 'None' 
+      OTHERWISE
+         PRINT 'None' 
    END CASE
 END
 ```
