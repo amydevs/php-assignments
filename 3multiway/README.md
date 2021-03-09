@@ -97,29 +97,29 @@ BEGIN
    	Enter Age; age
   	IF age is between 0 and 5 THEN
     	PRINT 'Name is too young for school'
-    ELSE
+   ELSE
 		IF age is between 5 and 7 THEN
     		PRINT 'Name is in infants school'
     	ELSE
         	IF age is between 8 and 12 THEN
         		PRINT 'Name is in primary school'
         	ELSE
-                IF age is between 13 and 16 THEN
+               IF age is between 13 and 16 THEN
                 	PRINT 'Name is in middle school'
-                ELSE
+               ELSE
                     IF age is between 17 and 18 THEN
                         PRINT 'Name is in senior school'
-                    ELSE
-                        IF age is more than 18 THEN
-                        	PRINT 'Name has left school'
-                        ELSE
-                        	PRINT 'None'
-                        END IF
-                    END IF
-                END IF
+                  ELSE
+                     IF age is more than 18 THEN
+                        PRINT 'Name has left school'
+                     ELSE
+                        PRINT 'None'
+                  END IF
+               END IF
+            END IF
         	END IF
-        END IF
-   	END IF
+      END IF
+   END IF
 END
 ```
 
