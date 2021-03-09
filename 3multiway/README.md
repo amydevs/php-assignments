@@ -93,8 +93,8 @@ END
 
 ```pseudocode
 BEGIN
-   Enter Name; Name
-   Enter Age; age
+   	Enter Name; Name
+   	Enter Age; age
   	IF age is between 0 and 5 THEN
     	PRINT 'Name is too young for school'
    ELSE
@@ -104,16 +104,16 @@ BEGIN
         	IF age is between 8 and 12 THEN
         		PRINT 'Name is in primary school'
         	ELSE
-            IF age is between 13 and 16 THEN
-               PRINT 'Name is in middle school'
-            ELSE
-               IF age is between 17 and 18 THEN
-                     PRINT 'Name is in senior school'
+               IF age is between 13 and 16 THEN
+                	PRINT 'Name is in middle school'
                ELSE
-                  IF age is more than 18 THEN
-                     PRINT 'Name has left school'
+                    IF age is between 17 and 18 THEN
+                        PRINT 'Name is in senior school'
                   ELSE
-                     PRINT 'None'
+                     IF age is more than 18 THEN
+                        PRINT 'Name has left school'
+                     ELSE
+                        PRINT 'None'
                   END IF
                END IF
             END IF
