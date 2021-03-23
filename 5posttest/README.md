@@ -43,7 +43,7 @@ No, as the index for the loop starts at 0. Therefore, when counting from zero to
 
 The loops in the algorithm for the Pre-test and Post-test get the same result. Explain why there is a difference between the pseudocode "Condition statements" of a Pre-test Loop `(count <= NumberOfLoops)` and Post-test Loop `(count >= NumberOfLoops)`.
 
-For a pretest loop, the code is only ran if count is less than or equal to the Number of Loops. Whilst on a Post-test loop, the code is constantly ran, until count is more than or equal to Number of Loops.
+For a pretest loop, the code is only ran if count is less than or equal to the Number of Loops. Whilst on a Post-test loop, the code is constantly run, until count is more than or equal to Number of Loops.
 
 
 
@@ -51,7 +51,7 @@ For a pretest loop, the code is only ran if count is less than or equal to the N
 
 | Input                 | Process                        | Output                                                       |
 | --------------------- | -------------------------------- | ------------------------------------------------------------ |
-| number 1<br/>number 2 | Loop from number 1 to number 2 | Print each loop number until number of loops entered is reached |
+| number 1<br/> number 2 | Loop from number 1 to number 2 | Print each loop number until number of loops entered is reached |
 
 
 

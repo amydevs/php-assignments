@@ -12,7 +12,6 @@
     $number1 = $_POST['number1'];
     $number2 = $_POST['number2'];
     $count = $number1;
-    echo "Example output<br>" ;
     do{
         echo "Loop number; $count <br>";
         $count = $count  + 1;
