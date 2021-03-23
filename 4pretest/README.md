@@ -63,7 +63,7 @@ a) Try the example on the web site using the test data. Complete the table below
 
 | **Enter  Number** | **Expected Output**                   | **Actual Output** |
 | ----------------- | ------------------------------------- | ----------------- |
-| - 4               | Error “only positive numbers allowed” |                   |
+| - 4               | Error “only positive numbers allowed” | Loop number 0     |
 
 b)  Re-write the algorithm so that the error message appears if the user inputs a number below 1. The Error Message should say: "You are only allowed to enter positive numbers. Please try again"
 

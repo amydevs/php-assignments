@@ -7,7 +7,7 @@
 	</head>
     <?php	
         $NumberOfLoops = $_POST['number'];
-        $count = 0;
+        $count = 1;
 		if ($NumberOfLoops < 1) {
 			echo 'You are only allowed to enter positive numbers. Please try again.';
 		}
