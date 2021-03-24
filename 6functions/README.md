@@ -18,5 +18,9 @@
 
 (a) Does the program produce the expected output?
 
+Yes
+
 (b) Name the parameters used in the example function in the PHP code below:
+
+\$day and \$meal.
 
