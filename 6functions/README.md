@@ -14,7 +14,9 @@
 | Friday   | B        | “No Menu”                      | "No MENU"                       |
 |          |          |                                |                                 |
 
+## Question 2:
 
+![](drawio/diagram1.drawio.svg)
 
 (a) Does the program produce the expected output?
 
