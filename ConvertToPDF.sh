@@ -1,0 +1,1 @@
+find . -name "*.md*" | while read i; do pandoc -f markdown -t ms "$i" -o "${i%.*}.pdf"; done
