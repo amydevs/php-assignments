@@ -11,44 +11,41 @@
 	<?php	
         function menu($day, $meal)
         {
-            if ($day == 'Saturday') {
-                if ($meal == "B")
-                {
-                    echo "MENU for Saturday: Breakfast";
-                }
-                else if ($meal == "L")
-                {
-                    echo "MENU for Saturday: Lunch";
-                }
-                else if ($meal == "D")
-                {
-                    echo "MENU for Saturday: Dinner";
-                }
-                else
-                {
-                    echo "<p  class='Paragraph'>Not a valid MENU for Saturday</p>";
-                }
-            }
-            else if ($day == 'Sunday') {
-                if ($meal == "B")
-                {
-                    echo "MENU for Sunday: Breakfast";
-                }
-                else if ($meal == "L")
-                {
-                    echo "MENU for Sunday: Lunch";
-                }
-                else if ($meal == "D")
-                {
-                    echo "MENU for Sunday: Dinner";
-                }
-                else
-                {
-                    echo "<p  class='Paragraph'>Not a valid MENU for Saturday</p>";
-                }
-            }
-            else {
-                echo "No MENU";
+            switch ($day)
+            {
+                case 'Saturday':
+                    switch($meal) {
+                        case "B":
+                            echo "MENU for Saturday: Breakfast";
+                            break;
+                        case "L":
+                            echo "MENU for Saturday: Lunch";
+                            break;
+                        case "D":
+                            echo "MENU for Saturday: Dinner";
+                            break;
+                        default:
+                            echo "<p  class='Paragraph'>Not a valid MENU for Saturday</p>";
+                            break;
+                    }
+                case 'Sunday':
+                    switch($meal) {
+                        case "B":
+                            echo "MENU for Sunday: Breakfast";
+                            break;
+                        case "L":
+                            echo "MENU for Sunday: Lunch";
+                            break;
+                        case "D":
+                            echo "MENU for Sunday: Dinner";
+                            break;
+                        default:
+                            echo "<p  class='Paragraph'>Not a valid MENU for Sunday</p>";
+                            break;
+                    }
+                default:
+                    echo "No MENU";
+                    break;
             }
         }/*end of function*/
 
