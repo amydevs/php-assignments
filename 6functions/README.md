@@ -12,7 +12,7 @@
 |          | D        | "MENU for Sunday: Dinner"      | "MENU for Sunday: Dinner"       |
 |          | M        | “Not a valid menu for Sunday”  | "Not a valid MENU for Saturday" |
 | Friday   | B        | “No Menu”                      | "No MENU"                       |
-|          |          |                                |                                 |
+|          |          |                                | "No MENU"                       |
 
 ## Question 2:
 
@@ -20,7 +20,7 @@
 
 (a) Does the program produce the expected output?
 
-Yes
+No, as in both conditions of the switch case, when $meal is invalid, both print the same message: "Not a valid MENU for Saturday"  
 
 (b) Name the parameters used in the example function in the PHP code below:
 
